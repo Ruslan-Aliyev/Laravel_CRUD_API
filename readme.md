@@ -219,7 +219,7 @@ ORM is slower. But easier when changing DB, eg from MySQL to PostgreSQL
 
 EG: Post with many Comments. It's bad to retrieve the POST from the DB, then retrieve its Comments from the DB one at a time. Overcome this in Laravel by using the `with` function.
 
-- https://github.com/atabegruslan/Others/blob/master/DB/db.md#eager-vs-lazy-load
+- https://github.com/atabegruslan/Others/blob/master/Storage/db.md#eager-vs-lazy-load
 
 ## Text and Image MultiPart Upload Form
 
@@ -254,7 +254,7 @@ Good Tutorials:
 - http://itsolutionstuff.com/post/laravel-5-fileimage-upload-example-with-validationexample.html
 - Extra fun with images - crop to circle with transparency: 
     - https://thedebuggers.com/transparent-circular-crop-using-php-gd/
-    - https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Http/Controllers/Web/EntryController.php `::makeCircle`
+    - https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Http/Controllers/Web/EntryController.php `::makeCircle`
 
 ## RESTful API
 
@@ -318,7 +318,7 @@ config/auth.php:
 ],
 ```
 
-Now you can get access token: POST `.../oauth/token` https://github.com/atabegruslan/Travel-Blog-Laravel-5#get-access-token
+Now you can get access token: POST `.../oauth/token` https://github.com/Ruslan-Aliyev/Laravel_CRUD_API#get-access-token
 
 routes/api.php: 
 ```php
@@ -327,7 +327,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 ```
 
-Now you can get user data: GET `.../api/user` https://github.com/atabegruslan/Travel-Blog-Laravel-5#get-user-data
+Now you can get user data: GET `.../api/user` https://github.com/Ruslan-Aliyev/Laravel_CRUD_API#get-user-data
 
 routes/api.php: 
 ```php
@@ -336,7 +336,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['auth:api']], function () {
 });
 ```
 
-Now you must do Entry CRUDs with access token https://github.com/atabegruslan/Travel-Blog-Laravel-5#entries
+Now you must do Entry CRUDs with access token https://github.com/Ruslan-Aliyev/Laravel_CRUD_API#entries
 
 Good Tutorial: https://www.sitepoint.com/build-rest-resources-laravel/
 
@@ -361,9 +361,9 @@ Good Tutorials:
 
 https://developers.facebook.com
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/FBSignUp1.PNG)
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/FBSignUp2.PNG)
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/FBSignUp3.PNG)
+![](/Illustrations/FBSignUp1.PNG)
+![](/Illustrations/FBSignUp2.PNG)
+![](/Illustrations/FBSignUp3.PNG)
 
 #### Google Developer Console
 
@@ -371,7 +371,7 @@ https://console.developers.google.com/
 
 https://developers.google.com/identity/sign-in/web/sign-in
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/GoogleSignUp.PNG)
+![](/Illustrations/GoogleSignUp.PNG)
 
 .env
 ```
@@ -640,7 +640,7 @@ Route::group(['namespace' => 'Api', 'middleware' => ['auth:api']], function () {
 });
 ```
 
-Then complete the store method, like in: https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Http/Controllers/Web/SocialController.php
+Then complete the store method, like in: https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Http/Controllers/Web/SocialController.php
 
 ### Useful tutorials:
 
@@ -663,7 +663,7 @@ MAIL_ENCRYPTION=tls
 
 Create contact form view, connect it to route then to controller.
 
-Write the controller like this: https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Http/Controllers/Web/EmailController.php
+Write the controller like this: https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Http/Controllers/Web/EmailController.php
 
 In view, for HTML email template. Here I just show the HTML email that Admin receives:
 ```html
@@ -797,7 +797,7 @@ and complete `toWebPush` function.
 
 9. `Notification::send($users, new NewEntry);`
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/push_notifications_anatomy.png)
+![](/Illustrations/push_notifications_anatomy.png)
 
 ### 3rd party notifications - Firebase push notifications
 
@@ -818,11 +818,11 @@ and complete `toWebPush` function.
     - https://www.youtube.com/playlist?list=PLk7v1Z2rk4hjxP_CHAhjXQN3zrcEhluF_  <sup>Android</sup>
 
 1. Create a project and web app in https://console.firebase.google.com/ . Get the Firebase config credentials. Get the `public/manifest.json` too and include it in the HTML link tag.
-2. See https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/public/js/enable-firebase-push.js and https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/public/js/firebase-service-worker.js.
+2. See https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/public/js/enable-firebase-push.js and https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/public/js/firebase-service-worker.js.
 3. Run the `create_fcm_tokens_table` migration script.
 4. Make the `notification/firebase` API route handle it in the backend controller and DB.
 5. To send: POST to https://fcm.googleapis.com/fcm/send
-6. To do this properly, use notification (https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Notifications/NewEntry.php) and create a custom channel (https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Channels/FirebaseChannel.php). Creating custom channel tutorial is here: https://laravel.com/docs/master/notifications#custom-channels
+6. To do this properly, use notification (https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Notifications/NewEntry.php) and create a custom channel (https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Channels/FirebaseChannel.php). Creating custom channel tutorial is here: https://laravel.com/docs/master/notifications#custom-channels
 7. Handle incoming notification in `messaging.onMessage` and the service worker's `messaging.setBackgroundMessageHandler`
 
 #### HTTPS
@@ -925,7 +925,7 @@ class XxxHelper
         - Config: `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"`
 3. `php artisan migrate`
 4. Make User model use `Spatie\Permission\Traits\HasRoles`
-5. Add `features` to `config/permission.php`: https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/config/permission.php#L130
+5. Add `features` to `config/permission.php`: https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/config/permission.php#L130
 6. Run seeder: `php artisan db:seed --class=SyncPermissionTableSeeder` to populate `permissions` table from `config/permission.php`'s `features` part.
 7. Do MVC for User, Role and Permission
 8. Make use of:
@@ -1026,7 +1026,7 @@ In Laravel 5.8
 
 #### It should look like this:
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/vuetest2.PNG)
+![](/Illustrations/vuetest2.PNG)
 
 ## Output seperate JS files from Vue files
 
@@ -1074,7 +1074,7 @@ Then in your resources/views/what..ever/view.blade.php:
 
 ## How to access protected API routes from Vue view
 
-1. Pass access token from backend to view template, like https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Http/Controllers/Controller.php
+1. Pass access token from backend to view template, like https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Http/Controllers/Controller.php
 2. Keep the token in a meta tag `<meta name="token" content="{{ $token }}">`
 3. In the JS part, set the token as a part of the header `axios.defaults.headers.common['Authorization'] = 'Bearer ' + document.head.querySelector('meta[name="token"]').content`
 4. In the script part of the Vue view, you can use axios to make requests to token-protected routes.
@@ -1095,7 +1095,7 @@ Need to create a many-to-many relationship between place and region.
 
 Use pivot tables. `Illuminate\Database\Eloquent\Relations\Concerns\InteractsWithPivotTable::sync()` is especially useful: https://laraveldaily.com/pivot-tables-and-many-to-many-relationships/
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/pivot-sync.png)
+![](/Illustrations/pivot-sync.png)
 
 ## Steps
 
@@ -1284,10 +1284,10 @@ ClassicEditor
 - https://pineco.de/laravel-blade-filters/
 - Unfortunately that library doesn't work in the newest versions of Laravel. But, we can still imitate it:
 
-1. Make provider: `php artisan make:provider BladeFiltersServiceProvider` , https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Providers/BladeFiltersServiceProvider.php
-2. Make service: https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Services/BladeFiltersCompiler.php
-3. Make custom provider: `php artisan make:provider TranslateServiceProvider` , https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/app/Providers/TranslateServiceProvider.php
-4. Register in `config/app.php` : https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/config/app.php#L187-188
+1. Make provider: `php artisan make:provider BladeFiltersServiceProvider` , https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Providers/BladeFiltersServiceProvider.php
+2. Make service: https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Services/BladeFiltersCompiler.php
+3. Make custom provider: `php artisan make:provider TranslateServiceProvider` , https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/app/Providers/TranslateServiceProvider.php
+4. Register in `config/app.php` : https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/config/app.php#L187-188
 5. Use it in Blade: `{{ $blablah | translate:'vn' }}`
 
 ## In Vue
@@ -1297,7 +1297,7 @@ ClassicEditor
 - https://stackoverflow.com/questions/54744877/vue-filters-for-input-v-model
 - https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples#toc-defining-and-using-filters
 
-1. In `resources\js\app.js` write your filter: https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/blob/master/resources/js/app.js
+1. In `resources\js\app.js` write your filter: https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/blob/master/resources/js/app.js
 2. In Vue, use it like: `{{ blahblah | to_3dp }}`
 3. run `npm run dev`
 
@@ -1313,9 +1313,9 @@ Use mixins: https://v1.vuejs.org/guide/mixins.html
 
 ## Service Provider
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/servicecontainer1.jpg)
+![](/Illustrations/servicecontainer1.jpg)
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/servicecontainer2.png)
+![](/Illustrations/servicecontainer2.png)
 
 - https://code.tutsplus.com/tutorials/how-to-register-use-laravel-service-providers--cms-28966
 - Then watch these tutorials:
@@ -1337,7 +1337,7 @@ Better dependency management
 
 Laravel best fits the ADR pattern.
 
-![](https://raw.githubusercontent.com/atabegruslan/Travel-Blog-Laravel-5-8/master/Illustrations/patterns.png)
+![](/Illustrations/patterns.png)
 
 ## Clear cache
 
@@ -1477,7 +1477,7 @@ https://www.itsolutionstuff.com/post/how-to-use-soft-delete-in-laravel-5example.
 
 #### For the view
 
-1. Write your custom pagination component, like: https://github.com/atabegruslan/Travel-Blog-Laravel-5-8/tree/master/resources/js/components/common/Pagination.vue
+1. Write your custom pagination component, like: https://github.com/Ruslan-Aliyev/Laravel_CRUD_API/tree/master/resources/js/components/common/Pagination.vue
 
 2. In `app.js`
 ```
