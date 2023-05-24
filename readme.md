@@ -1509,11 +1509,10 @@ Pass the `pagination` object into the view.
 - https://github.com/gilbitron/laravel-vue-pagination/blob/master/README.md
 - https://github.com/matfish2/vue-pagination-2/blob/master/README.md
 
----
+## CORS
 
-# More notes
-
-https://github.com/Ruslan-Aliyev/laravel_notes/
+- https://www.stackhawk.com/blog/laravel-cors/
+- https://stackoverflow.com/questions/39429462/adding-access-control-allow-origin-header-response-in-laravel-5-3-passport
 
 ---
 
